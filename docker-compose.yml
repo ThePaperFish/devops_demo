@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  object-detection:
+    build: .
+    ports:
+      - "8000:8000"
+    runtime: nvidia
+    # entrypoint: tail -f /dev/null
+    environment:
+      - PYTHONPATH=/app
