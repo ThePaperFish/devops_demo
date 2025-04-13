@@ -1,0 +1,3 @@
+services:
+  object-detection:
+    runtime: runc  # fallback to default runtime

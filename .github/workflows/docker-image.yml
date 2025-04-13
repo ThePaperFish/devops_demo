@@ -34,7 +34,7 @@ jobs:
     #   # run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
     
     - name: Set up Docker Compose
-      run: docker compose up -d --build
+      run: docker compose -f docker-compose.yml -f docker-compose.override.ci.yml up -d --build
 
     - name: Run tests
       run: docker compose exec object-detection pytest tests/
@@ -64,3 +64,5 @@ jobs:
         context: .
         push: true
         tags: thepeperfish/devops_demo:latest
+        cache-from: type=registry,ref=thepeperfish/devops_demo:cache
+        cache-to: type=registry,ref=thepeperfish/devops_demo:cache,mode=max
