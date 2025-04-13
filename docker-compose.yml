@@ -9,3 +9,4 @@ services:
     # entrypoint: tail -f /dev/null
     environment:
       - PYTHONPATH=/app
+    container_name: object-detection
