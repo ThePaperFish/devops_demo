@@ -28,6 +28,9 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
+    
+    - name: Enable Docker BuildKit
+      run: echo "DOCKER_BUILDKIT=1" >> $GITHUB_ENV
 
     # - name: Build the Docker image
     #   run: docker build . --file Dockerfile --tag thepeperfish/devops_demo:latest
