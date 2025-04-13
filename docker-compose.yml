@@ -2,7 +2,14 @@ version: '3'
 
 services:
   object-detection:
-    build: .
+    build: 
+      context: .
+      dockerfile: Dockerfile
+      cache_from:
+        - type=registry,ref=thepeperfish/devops_demo:cache
+      cache_to:
+        - type=registry,ref=thepeperfish/devops_demo:cache,mode=max
+    image: thepeperfish/devops_demo:latest
     ports:
       - "8000:8000"
     runtime: nvidia

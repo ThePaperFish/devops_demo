@@ -34,10 +34,7 @@ jobs:
     #   # run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
     
     - name: Set up Docker Compose
-      run: docker compose -f docker-compose.yml -f docker-compose.override.ci.yml up -d --build
-
-    - name: Run tests
-      run: docker compose exec object-detection pytest tests/
+      run: docker compose -f docker-compose.yml -f docker-compose.override.ci.yml up -d --build && docker compose exec object-detection pytest tests/
 
     - name: Tear down
       run: docker compose down
