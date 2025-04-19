@@ -68,5 +68,3 @@ jobs:
         context: .
         push: true
         tags: thepeperfish/devops_demo:latest
-        cache-from: type=registry,ref=thepeperfish/devops_demo:cache
-        cache-to: type=registry,ref=thepeperfish/devops_demo:cache,mode=max
