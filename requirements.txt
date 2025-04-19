@@ -3,3 +3,5 @@ uvicorn>=0.15.0
 ultralytics
 python-multipart
 pytest
+httpx
+pytest-asyncio
